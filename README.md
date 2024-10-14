@@ -6,7 +6,7 @@
 * **Input:** 1 ảnh trong tập seg_test.
 * **Output:** 10 ảnh trong tập seg giống với ảnh input nhất.
 * **Công cụ sữ dụng:** VS code
-* **Ngôn ngữ:** `python`
+* **Ngôn ngữ:** `python`, `html`, `css`
 
 ## Setup
 
