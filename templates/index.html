@@ -1,0 +1,51 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+    <!-- Liên kết với file CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Upload an Image to Find Similar Images</h1>
+
+    <!-- Form tải lên ảnh -->
+    <div class="upload-container">
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" id="file-upload">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <!-- Hiển thị kết quả nếu có -->
+    {% if uploaded_image %}
+        <div class="results-container">
+            <h2>Uploaded Image</h2>
+            <div class="image-card-upload">
+                <p>Label: {{ uploaded_image.split('/')[3] }}</p>
+                <img src="{{ uploaded_image }}" alt="Uploaded image" class="uploaded-img">
+            </div>
+
+            <h2>Top 10 Similar Images:</h2>
+            <div class="image-grid">
+                {% for filename, score in results %}
+                    <div class="image-card">
+                        <!-- Chia filename và lấy phần label trước dấu '/' -->
+                        <p>Label: {{ filename.split('/')[0] }}</p>
+                        <p>Score: {{ '%.2f' % score }}</p>
+                        <img src="{{ url_for('static', filename='dataset/seg/' + filename) }}" alt="{{ filename }}" class="similar-img">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+</body>
+</html>
