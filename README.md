@@ -45,5 +45,11 @@ http://127.0.0.1:5000/
 ## Hiển thị
 ![image](https://github.com/user-attachments/assets/7932d771-c0d8-4a88-bb80-adaac333e1b8)
 
+## Create by
+
+* **Github:** [lananh2905](https://github.com/lananh2905)
+* **Email:** 22520083@gm.uit.edu.vn
+
+
 <!-- Footer -->
 <p align='center'>Copyright © 2024 - Trịnh Thị Lan Anh</p>
